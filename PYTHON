@@ -60,3 +60,116 @@ class MuralistConnect:
                 break
         return proposals
 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Muralist Connect</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+
+		h1, h2, h3 {
+			margin-bottom: 0;
+		}
+
+		h1 {
+			font-size: 2em;
+		}
+
+		h2 {
+			font-size: 1.5em;
+		}
+
+		h3 {
+			font-size: 1.2em;
+		}
+
+		label {
+			display: block;
+			margin-top: 1em;
+			font-weight: bold;
+		}
+
+		input, textarea {
+			display: block;
+			width: 100%;
+			padding: 0.5em;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			margin-top: 0.5em;
+			box-sizing: border-box;
+		}
+
+		button {
+			padding: 0.5em;
+			background-color: #0099ff;
+			color: #fff;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #0077cc;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		li {
+			margin-top: 0.5em;
+		}
+
+		.project {
+			margin-bottom: 1em;
+			padding: 1em;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+		}
+
+		.proposal {
+			margin-bottom: 1em;
+			padding: 1em;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Muralist Connect</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Create Muralist Profile</h2>
+			<form id="create-muralist-form">
+				<label for="name-input">Name</label>
+				<input type="text" id="name-input" required>
+				<label for="skills-input">Skills</label>
+				<input type="text" id="skills-input" required>
+				<label for="experience-input">Experience</label>
+				<textarea id="experience-input" required></textarea>
+				<label for="contact-info-input">Contact Info</label>
+				<textarea id="contact-info-input" required></textarea>
+				<button type="submit">Create Profile</button>
+			</form>
+		</section>
+		<section>
+			<h2>Create Project</h2>
+			<form id="create-project-form">
+				<label for="project-name-input">Project Name</label>
+				<input type="text" id="project-name-input" required>
+				<label for="project-description-input">Project Description</label>
+				<textarea id="project-description-input" required></textarea>
+				<label for="project-deadline-input">Project Deadline</label>
+				<input type="date" id="project-deadline-input" required>
+				<button type="submit">Create Project</button>
+			</form>
+		</section>
+		<section>
+			<h2>Assign Task</h2>
+		
