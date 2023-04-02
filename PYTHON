@@ -1,0 +1,62 @@
+class Muralist:
+    def __init__(self, name, skills, experience, contact_info):
+        self.name = name
+        self.skills = skills
+        self.experience = experience
+        self.contact_info = contact_info
+        self.projects = []
+        self.proposals = []
+
+    def create_project(self, project_name, description, deadline):
+        project = {'name': project_name, 'description': description, 'deadline': deadline}
+        self.projects.append(project)
+
+    def assign_task(self, project_name, task_name, deadline):
+        for project in self.projects:
+            if project['name'] == project_name:
+                task = {'name': task_name, 'deadline': deadline}
+                project['tasks'].append(task)
+                break
+
+    def submit_proposal(self, project_name, proposal):
+        for project in self.projects:
+            if project['name'] == project_name:
+                project['proposals'].append(proposal)
+                self.proposals.append(proposal)
+                break
+
+class MuralistConnect:
+    def __init__(self):
+        self.muralists = []
+        self.open_projects = []
+        self.proposals = []
+
+    def create_muralist_profile(self, name, skills, experience, contact_info):
+        muralist = Muralist(name, skills, experience, contact_info)
+        self.muralists.append(muralist)
+
+    def create_project(self, name, description, deadline):
+        project = {'name': name, 'description': description, 'deadline': deadline, 'tasks': [], 'proposals': []}
+        self.open_projects.append(project)
+
+    def assign_task(self, project_name, task_name, deadline):
+        for project in self.open_projects:
+            if project['name'] == project_name:
+                task = {'name': task_name, 'deadline': deadline}
+                project['tasks'].append(task)
+                break
+
+    def submit_proposal(self, muralist_name, project_name, proposal):
+        for muralist in self.muralists:
+            if muralist.name == muralist_name:
+                muralist.submit_proposal(project_name, proposal)
+                break
+
+    def get_proposals(self, project_name):
+        proposals = []
+        for project in self.open_projects:
+            if project['name'] == project_name:
+                proposals = project['proposals']
+                break
+        return proposals
+
